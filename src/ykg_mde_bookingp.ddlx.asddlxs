@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Booking',
+    typeNamePlural: 'Bookings',
+    title: {
+    type: #STANDARD,
+    label: 'Booking No',
+    value: 'BookingId'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'Customer Name',
+        value: '_Customer.FirstName'
+    }
+}
+annotate entity YKG_P_BOOKING_PROCESSOR with
+{
+  @UI.facet: [
+  {   purpose: #STANDARD,
+      label: 'Booking details',
+      type: #IDENTIFICATION_REFERENCE,
+      position: 10 
+  },
+  { 
+    purpose: #STANDARD,
+    type: #LINEITEM_REFERENCE,
+    position: 20,
+    targetElement: '_BookingSupp',
+    label: 'Supplements'
+  }
+]
+  @UI.lineItem: [{ position: 10, label: 'Booking Id' }]
+  @UI.identification: [{ position: 10 }]
+  BookingId;
+  @UI.lineItem: [{ position: 20, label: 'Customer Id' }]
+  CustomerId;
+  @UI.lineItem: [{ position: 30, label: 'Booking Date' }]
+  @UI.identification: [{ position: 10, label: 'Booking Date' }]
+  BookingDate;
+  @UI.lineItem: [{ position: 40, label: 'Carrier Id' }]
+  @UI.identification: [{ position: 20, label: 'Carrier Id' }]
+  CarrierId;
+  @UI.lineItem: [{ position: 50, label: 'Connection Id' }]
+  ConnectionId;
+  @UI.lineItem: [{ position: 60, label: 'Flight Date' }]
+  FlightDate;
+  @UI.lineItem: [{ position: 70, label: 'Flight Price' }]
+  FlightPrice;
+  @UI.lineItem: [{ position: 80, label: 'Booking status' }]
+  BookingStatus;
+}

@@ -1,0 +1,12 @@
+@EndUserText.label: 'service defination processor'
+define service YKG_SD_PROCESSOR {
+  expose YKG_P_TRAVEL_PROCESSOR;
+  expose YKG_P_BOOKING_PROCESSOR;
+  expose YKG_P_BOOKINGSUPP_PROCESSOR;
+  expose /DMO/I_Agency;
+  expose /DMO/I_Customer;
+  expose /DMO/I_Carrier;
+  expose /DMO/I_Connection;
+  expose /DMO/I_Overall_Status_VH;
+  expose /DMO/I_Booking_Status_VH;
+}

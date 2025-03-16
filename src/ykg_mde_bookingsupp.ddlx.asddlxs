@@ -1,0 +1,36 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Booking Supplement',
+    typeNamePlural: 'Booking Supplements',
+    title: {
+        type: #STANDARD,
+        value: '_Suppliment.SupplementID'
+    },
+    description: {
+        type: #STANDARD,
+        value: '_SupplimentText.Description'
+    }
+}
+annotate entity YKG_P_BOOKINGSUPP_PROCESSOR with
+{
+  @UI.facet: [
+  {
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    position: 10,
+    label: 'Booking Suppliment details'
+  }
+  ]
+  @UI.lineItem: [{ position: 10, label: 'Booking Supp ID' }]
+  @UI.identification: [{ position: 10 }]
+  BookingSupplementId;
+  @UI.identification: [{ position: 20 }]
+  @UI.lineItem: [{ position: 20, label: 'Supp ID' }]
+  SupplementId;
+  @UI.identification: [{ position: 30 }]
+  @UI.lineItem: [{ position: 30, label: 'Price' }]
+  Price;
+  @UI.identification: [{ position: 40 }]
+  @UI.lineItem: [{ position: 40, label: 'Last Changed at' }]
+  LastChangedAt;
+}
